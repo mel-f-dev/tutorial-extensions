@@ -29,6 +29,9 @@ post.published_date = timezone.now()
 
 ```python
 url(r'^drafts/$', views.post_draft_list, name='post_draft_list'),
+
+# python 최신 버전의 경우(2020.7.31. 기준)
+path('drafts/', viws.post_draft_list, name='post_draft_list'),
 ```
 
 `blog/views.py`에 view를 생성할 차례입니다.
@@ -59,7 +62,7 @@ def post_draft_list(request):
 
 `post_list.html` 템플릿과 코드가 많이 비슷해보이죠?
 
-브라우저로 `http://127.0.0.1:8000/draft/` 페이지를 열어보면, 미 게시된 글목록을 확인할 수 있어요.
+브라우저로 `http://127.0.0.1:8000/drafts/` 페이지를 열어보면, 미 게시된 글목록을 확인할 수 있어요.
 
 야호! 첫 번째 일이 마쳤어요!
 
