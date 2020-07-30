@@ -98,6 +98,9 @@ def post_draft_list(request):
 
 ```python
 url(r'^post/(?P<pk>\d+)/publish/$', views.post_publish, name='post_publish'),
+
+# python 최신 버전의 경우(2020.7.31. 기준)
+path('post/<pk>/publish/', views.post_publish, name='post_publish'),
 ```
 
 마지막으로 `post_publish` *뷰*를 `blog/views.py` 에 추가해봅시다.
@@ -139,6 +142,9 @@ def publish(self):
 
 ```python
 url(r'^post/(?P<pk>\d+)/remove/$', views.post_remove, name='post_remove'),
+
+# python 최신 버전의 경우(2020.7.31. 기준)
+path('post/<pk>/remove/', views.post_remove, name='post_remove'),
 ```
 
 이제 post_remove 뷰를 구현해봅시다. `blog/views.py` 에 아래 코드를 추가해주세요.
